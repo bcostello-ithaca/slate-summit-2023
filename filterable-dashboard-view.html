@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+    <style type="text/css">div.welcome-box {
+      margin: 0 0 30px 0px;
+        background-color: #eee;
+        padding: 15px;
+      }
+      
+      div.welcome-box p {
+      font-size: 1.4rem;  
+      }
+      
+      div.view-block {
+      padding: 10px;
+        border: 1px solid #ddd !important;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+    </style>
+   
+  </head>
+  <body>
+    <div class="welcome-box">
+      <p>
+        Hello! This page includes a working example of a filterable view. Choosing a different view option shows or hides each element using Javascript. Everything you should need is contained within this page.
+      </p>
+    </div>
+
+    <div class="info_box" style="margin-bottom: 30px;">
+      <div class="info_icon">
+        <i class="fas fa-eye">&nbsp;</i>
+      </div>
+
+      <p>
+        Different people can see different parts of your information. View my success dashboard as: <select id="viewas"><option value="view-me">Me (Show Everything)</option><option value="view-advisors">My Advisor(s)</option><option value="view-faculty">Non-Advisor Faculty</option><option value="view-deans">My Dean's Office Advising Staff</option><option value="view-provost">The Provost's Office Staff</option><option value="view-cssr">Center for Student Success Staff</option><option value="view-sacl-leadership">SACL Leadership</option><option value="view-sacl-coaches">SACL Advisors and Coaches</option><option value="view-sacl-mental">SACL Mental Health Support Staff</option><option value="view-sacl-general">SACL All Other Staff</option><option value="view-no-access">Any Other IC Staff</option></select>
+      </p>
+    </div>
+
+    <div class="view-block view-me view-advisors view-faculty view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental view-sacl-general">
+      Header Section
+    </div>
+
+    <div class="view-block view-me view-advisors view-faculty view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental view-sacl-general">
+      Academic Overview
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental view-sacl-general">
+      Flags
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental">
+      Charts and Graphs
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-mental">
+      Course List
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental view-sacl-general">
+      Success Network
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental view-sacl-general">
+      <div id="loa_requests">
+        Leave of Absence Requests
+      </div>
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-mental">
+      Financial Aid Awards
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental">
+      Tutoring Information
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental view-sacl-general">
+      Engagement Info
+    </div>
+
+    <div class="view-block view-me view-advisors view-deans view-provost view-cssr view-sacl-leadership view-sacl-coaches view-sacl-mental view-sacl-general">
+      Student Orgs
+    </div>
+
+    <div class="view-block view-no-access" style="background-color: #ffffcc; padding: 15px; display: none;">
+      Not allowed to access to your dashboard.
+    </div>
+    
+    <!-- The filtering javascript -->
+    
+    <script type="text/javascript">
+      $( document ).ready(function() { 
+        $("#viewas").change(function() {
+          $(".view-block").fadeOut( "slow", function() {
+          // Animation complete.
+          });
+          var viewvar = "."+$(this).val();
+          $(viewvar).fadeIn( "slow", function() {
+            // Animation complete.
+          });
+          //console.log(viewvar);
+         });
+      });
+</script>
+    
+  </body>
+</html>
